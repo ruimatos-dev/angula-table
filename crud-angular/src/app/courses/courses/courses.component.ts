@@ -13,15 +13,14 @@ export class CoursesComponent implements OnInit {
   courses: Course[] = [];
   displayedColumns = ['name','category'];
 
-  coursesService: CoursesService;
+  // coursesService: CoursesService;
 
-  constructor() {
-    // this.courses = [];
-    this.coursesService = new CoursesService();
+  constructor(private coursesService: CoursesService) {
     this.courses = this.coursesService.list();
   }
 
   ngOnInit(): void {
+    // this.courses = this.coursesService.list(); // Segunda Opção mesma coisa anterior
   }
 
 }
